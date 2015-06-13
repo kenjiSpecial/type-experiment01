@@ -3,7 +3,7 @@ const openURL = require('opn');
 const once = require('once');
 
 const gulp = require('gulp');
-const gulp = require('gulp-gh-pages');
+const ghPages = require('gulp-gh-pages');
 const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
