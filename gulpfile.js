@@ -3,6 +3,7 @@ const openURL = require('opn');
 const once = require('once');
 
 const gulp = require('gulp');
+const gulp = require('gulp-gh-pages');
 const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
@@ -82,4 +83,9 @@ gulp.task('bundle', ['sass'], function () {
         .pipe(streamify(uglify()))
         .pipe(rename(outfile))
         .pipe(gulp.dest('./app'))
+});
+
+gulp.task('deploy', function() {
+    return gulp.src('./app/*')
+        .pipe(ghPages());
 });
